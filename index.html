@@ -30,33 +30,33 @@
     }
     h1 {
       font-size: 1.5rem;
-      margin-bottom: 30px;
-      min-height: 60px; /* para que no se superponga con el corazón mientras escribe */
+      margin-bottom: 40px;
+      min-height: 80px; /* más espacio reservado para el texto */
     }
     .heart {
-      width: 100px;
-      height: 90px;
+      width: 120px;
+      height: 100px;
       background: rgb(2, 120, 255);
       position: relative;
-      margin: 30px auto;
+      margin: 40px auto;
       transform: rotate(-45deg);
       animation: beat 4s infinite;
     }
     .heart::before,
     .heart::after {
       content: "";
-      width: 100px;
-      height: 90px;
+      width: 120px;
+      height: 100px;
       background: rgb(2, 120, 255);
       border-radius: 50%;
       position: absolute;
     }
     .heart::before {
-      top: -50px;
+      top: -60px;
       left: 0;
     }
     .heart::after {
-      left: 50px;
+      left: 60px;
       top: 0;
     }
     @keyframes beat {
@@ -72,33 +72,38 @@
       line-height: 1.6rem;
       opacity: 0;
       animation: fadeIn 6s forwards;
-      margin-top: 20px;
+      margin-top: 30px;
     }
     @keyframes fadeIn {
       0% { opacity: 0; }
       100% { opacity: 1; }
     }
 
-    /* Adaptación a móviles */
+    /* Ajustes móviles */
     @media (max-width: 600px) {
       .names {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
       h1 {
-        font-size: 1.2rem;
-        min-height: 50px;
+        font-size: 1.1rem;
+        min-height: 100px; /* más alto en celular */
+        margin-bottom: 30px;
       }
       .heart {
         width: 80px;
         height: 70px;
+        margin: 30px auto;
       }
       .heart::before,
       .heart::after {
         width: 80px;
         height: 70px;
       }
+      .heart::before { top: -40px; }
+      .heart::after { left: 40px; }
       .message {
         font-size: 1rem;
+        margin-top: 25px;
       }
     }
   </style>
